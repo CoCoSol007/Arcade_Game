@@ -4,9 +4,9 @@ from set_programe.dl_image import download
 
 class Hero(pygame.sprite.Sprite) :
 
-    def __init__(self) :
+    def __init__(self,path) :
         super().__init__()
-        self.images, self.image_respiration = download()
+        self.images, self.image_respiration = download(path)
         self.image = self.images[0]
         self.rect = self.image.get_rect()
         self.rect.center =(540, 650)

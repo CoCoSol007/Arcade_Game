@@ -6,13 +6,13 @@ import pygame
 
 class coins(pygame.sprite.Sprite) :
 
-    def __init__(self) :
+    def __init__(self,path) :
         super().__init__()
         self.images = [
-            pygame.image.load("set/coins_animation\star coin rotate\star coin rotate 1.png"),
-            pygame.image.load("set/coins_animation\star coin rotate\star coin rotate 2.png"),
-            pygame.image.load("set/coins_animation\star coin rotate\star coin rotate 3.png"),
-            pygame.image.load("set/coins_animation\star coin rotate\star coin rotate 4.png")
+            pygame.image.load(path+"/set/coins_animation\star coin rotate\star coin rotate 1.png"),
+            pygame.image.load(path+"/set/coins_animation\star coin rotate\star coin rotate 2.png"),
+            pygame.image.load(path+"/set/coins_animation\star coin rotate\star coin rotate 3.png"),
+            pygame.image.load(path+"/set/coins_animation\star coin rotate\star coin rotate 4.png")
             
         ]
 

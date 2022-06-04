@@ -6,12 +6,12 @@ import pygame
 
 class Button(pygame.sprite.Sprite) :
 
-    def __init__(self, style, co) :
+    def __init__(self, style, co,path) :
         super().__init__()
         
         if style == "start" :
             
-            self.image = pygame.image.load("set/button_start.png")
+            self.image = pygame.image.load(path+"/set/button_start.png")
             self.image = pygame.transform.scale(self.image,(256, 128))
 
             

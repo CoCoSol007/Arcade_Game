@@ -3,13 +3,13 @@ import random
 
 class Malus(pygame.sprite.Sprite):
 
-    def __init__(self):
+    def __init__(self,path):
         super().__init__()
         self.images = [
-            pygame.image.load("set/MalusCoin/star_coin_rotate_1.png"),
-            pygame.image.load("set/MalusCoin/star_coin_rotate_2.png"),
-            pygame.image.load("set/MalusCoin/star_coin_rotate_3.png"),
-            pygame.image.load("set/MalusCoin/star_coin_rotate_4.png")
+            pygame.image.load(path+"/set/MalusCoin/star_coin_rotate_1.png"),
+            pygame.image.load(path+"/set/MalusCoin/star_coin_rotate_2.png"),
+            pygame.image.load(path+"/set/MalusCoin/star_coin_rotate_3.png"),
+            pygame.image.load(path+"/set/MalusCoin/star_coin_rotate_4.png")
             
         ]
 

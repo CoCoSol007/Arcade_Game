@@ -4,12 +4,12 @@ import random
 
 class Arrow(pygame.sprite.Sprite) : 
     
-    def __init__(self) :
+    def __init__(self,path) :
         super().__init__()
         
         self.direction = random.choice([">", "<"])
 
-        self.images = [pygame.image.load("set/arrow.png")]
+        self.images = [pygame.image.load(path+"/set/arrow.png")]
         image = pygame.transform.flip(self.images[0], True, False)
         self.images.append(image)
         self.images[0] = pygame.transform.scale(self.images[0], (64,64))

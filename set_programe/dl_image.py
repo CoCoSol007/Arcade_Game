@@ -3,9 +3,9 @@ import pygame
 
 pygame.init()
 
-def download():
+def download(path):
     
-    sprit_sheet = pygame.image.load("set/Oldhero.png")
+    sprit_sheet = pygame.image.load(path+"/set/Oldhero.png")
     
     
     

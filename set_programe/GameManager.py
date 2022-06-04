@@ -14,7 +14,7 @@ from set_programe.button import Button
 
 class Health(pygame.sprite.Sprite) :
 
-    def __init__(self) :
+    def __init__(self, path) :
         super().__init__()
         health = pygame.image.load("set/health.png")
         self.images = [  
@@ -44,14 +44,14 @@ class Health(pygame.sprite.Sprite) :
         self.level = 1
         
 
-        self.coins_icon = Coin()
-        self.Hero = Hero()
-        self.start_button = Button("start", (540, 317))
-        self.re_start_button = Button("re-start", (520, 500))
-        self.menu_button = Button("menu", (520, 200))
-        self.settings_buttom = Button("settings", (540, 100))
-        self.button_plus = Button('Plus', (420, 500))
-        self.button_Moin = Button('Moin', (630, 500))
+        self.coins_icon = Coin(path)
+        self.Hero = Hero(path)
+        self.start_button = Button("start", (540, 317),  path)
+        self.re_start_button = Button("re-start", (520, 500), path)
+        self.menu_button = Button("menu", (520, 200), path)
+        self.settings_buttom = Button("settings", (540, 100), path)
+        self.button_plus = Button('Plus', (420, 500), path)
+        self.button_Moin = Button('Moin', (630, 500),path)
         
         
         
@@ -68,12 +68,14 @@ class Health(pygame.sprite.Sprite) :
         self.all_object_to_draw_menu_Win_and_Over = pygame.sprite.Group(self.re_start_button, self.menu_button)
         self.all_object_to_draw_settings = pygame.sprite.Group(self.menu_button, self.button_plus, self.button_Moin)
 
+        self.path = path
+
         self.son = {
-            "boom": pygame.mixer.Sound("set/boom8.wav"),
-            "piece": pygame.mixer.Sound("set/dropmetalthing.ogg"),
-            "hit" : pygame.mixer.Sound("set/hit.wav"),
-            "eat" :pygame.mixer.Sound("set/eat.ogg"),
-            "pop" :pygame.mixer.Sound("set/pop.flac"),
+            "boom": pygame.mixer.Sound(path+"/set/boom8.wav"),
+            "piece": pygame.mixer.Sound(path+"/set/dropmetalthing.ogg"),
+            "hit" : pygame.mixer.Sound(path+"/set/hit.wav"),
+            "eat" :pygame.mixer.Sound(path+"/set/eat.ogg"),
+            "pop" :pygame.mixer.Sound(path+"/set/pop.flac"),
             #"musique_fond" : pygame.mixer.Sound("musique de fond.mp3")
 
         }
@@ -154,27 +156,27 @@ class Health(pygame.sprite.Sprite) :
 
 
     def NewBombe(self):
-        h = bombe()
+        h = bombe(self.path)
         self.all_bombe.add(h)
         self.all_object_to_draw_mobile.add(h)
 
     def NewCoin(self):
-        a = coins()
+        a = coins(self.path)
         self.all_coins.add(a)
         self.all_object_to_draw_fix.add(a)
 
     def NewArrow(self):
-        a = Arrow()
+        a = Arrow(self.path)
         self.all_arrow.add(a)
         self.all_object_to_draw_mobile.add(a)
 
     def NewApple(self):
-        a = Apple()
+        a = Apple(self.path)
         self.all_apple.add(a)
         self.all_object_to_draw_mobile.add(a)
 
     def NewMalusCoins(self):
-        a = Malus()
+        a = Malus(self.path)
         self.all_malus.add(a)
         self.all_object_to_draw_mobile.add(a)
 

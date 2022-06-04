@@ -1,8 +1,14 @@
 #boucle principale
 
+import os
+
+path = os.getcwd()
+
 # On importe le module pygame
 import pygame
 from set_programe.GameManager import Health
+
+
 
 
 
@@ -26,7 +32,7 @@ tic_remain_dash = 180
 tic_coins_anilation = 0
 tic_respiration = 0
 
-GameManager = Health()
+GameManager = Health(path)
 GameManager.all_object_to_draw_fix.add(GameManager)
 
 
